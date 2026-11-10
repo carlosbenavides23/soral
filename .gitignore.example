@@ -1,0 +1,3 @@
+# Copiar estas líneas al .gitignore del repositorio Soral
+/internal-docs/
+/AGENTS.md

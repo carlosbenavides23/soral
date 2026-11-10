@@ -1,0 +1,7 @@
+# Soral
+
+Soral is an experimental Python CLI foundation for future active HTTP acquisition and static inventory. This stage is offline: it sends no HTTP requests, does not inspect websites, and does not execute JavaScript or classify phishing. Future network features require separate review.
+
+Requires Python 3.11 or later. Install locally with `python -m pip install -e .`. Run `soral --help`, `soral --version`, `soral version --format json`, or `soral config show --format json`. `soral config set warning false` persists the setting for future active commands; no network warning is emitted in this offline stage. `SORAL_CONFIG_HOME` overrides the configuration base directory, followed by `XDG_CONFIG_HOME`, then `~/.config`; the file is `soral/config.toml` under that base. Only the boolean `warning` is supported. Configuration updates replace the file atomically; concurrent writers can overwrite one another. Use a trusted configuration directory.
+
+`version` and `config show` accept `text`, `json`, and `jsonl`; the latter emits one JSON object on one line. Data goes to stdout and diagnostics to stderr. Exit codes: 0 success, 1 general operational failure (reserved), 2 usage or configuration error, 3 partial batch success (reserved). The initial target result contract has schema version `1`, target, and optional typed error; no acquisition results are produced yet. Run tests with `python -m unittest discover -s tests`.

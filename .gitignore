@@ -1,0 +1,8 @@
+/internal-docs/
+/AGENTS.md
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
